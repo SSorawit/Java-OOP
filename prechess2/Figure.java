@@ -3,9 +3,11 @@ public class Figure {
     int row,column,color;
     int Black = 0;
     int White = 1;
-  public Figure(String name,int color){
+  public Figure(String name,int color,int row,int column){
         this.name = name;
         this.color = color;
+        this.row = row;
+        this.column = column;
   }
   String getName(){
     System.out.println("Name of figure is "+name);
@@ -18,14 +20,6 @@ public class Figure {
     } else {
         return false;
     }
-  }
-  int setRow(int r){
-    r = row;
-    return row;
-  }
-  int setColumn(int c){
-    c = column;
-    return column;
   }
   int getRow(){
     return row;
