@@ -13,5 +13,7 @@ public class main {
         W.getRowAndColumn();
         B.getRowAndColumn();
         b.showBoard();
+        b.freemove(W, 7, 7);
+        b.check();
     }
 }

@@ -1,6 +1,5 @@
 public class Board{
  int board[][] = new int[8][8];
- int position1,position2;
  Figure P1,P2;
   public Board(){
 
@@ -8,9 +7,7 @@ public class Board{
     void showBoard(){
         for(int i = 0 ; i < 8 ; i++ ){
             for(int j = 0 ; j < 8 ; j++ ){
-                //System.out.print(" - ");
-                System.out.print(" "+board[i][j]+" ");
-
+            System.out.print("| " + board[i][j] + " |");
             }
             System.out.println(" ");
             }
@@ -24,8 +21,15 @@ public class Board{
         board[row1][column1] = 1;
         board[row2][column2] = 1;   
     }
+    void freemove(Figure a,int row,int column){
+        board[row][column] = 1;
+        board[a.row][a.column] = 0;
+        row = a.row;
+        column = a.column;
+        showBoard();
+    }
     void check(){
         System.out.println(board[0][0]);
-        System.out.println(board[0][1]);
+        System.out.println(board[7][7]);
     }
 }
