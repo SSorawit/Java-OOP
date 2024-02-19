@@ -1,7 +1,7 @@
 public class main {
     public static void main(String[] args){
-        Figure W = new Figure("white", "white");
-        Figure B = new Figure("black", "black");
+        Figure W = new Figure("white", 1);
+        Figure B = new Figure("black", 0);
         Board b = new Board();
         W.getName();
         W.getColor();
@@ -9,7 +9,7 @@ public class main {
         W.setColumn(0);
         W.getRowAndColumn();
         b.showBoard();
-        b.setBoard(W, 0, 0, B, 0, 1);
+        b.setBoard(W,B);
         W.getRowAndColumn();
         B.getRowAndColumn();
         b.showBoard();

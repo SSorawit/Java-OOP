@@ -1,7 +1,9 @@
 public class Figure {
-    String name,color;
-    int row,column;
-  public Figure(String name,String color){
+    String name;
+    int row,column,color;
+    int Black = 0;
+    int White = 1;
+  public Figure(String name,int color){
         this.name = name;
         this.color = color;
   }
@@ -10,10 +12,12 @@ public class Figure {
     System.out.println("----------------------------------------");  
     return name;
   }
-  String getColor(){
-    System.out.println("Color "+name+" is "+color);
-    System.out.println("----------------------------------------");  
-    return color;
+  public boolean getColor() {
+    if (color == White) {
+        return true;
+    } else {
+        return false;
+    }
   }
   int setRow(int r){
     r = row;
@@ -21,6 +25,12 @@ public class Figure {
   }
   int setColumn(int c){
     c = column;
+    return column;
+  }
+  int getRow(){
+    return row;
+  }
+  int getColumn(){
     return column;
   }
   void getRowAndColumn(){
