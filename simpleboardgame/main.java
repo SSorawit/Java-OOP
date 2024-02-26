@@ -3,7 +3,9 @@ public class main{
         Board brd = new Board();
         brd.boardInitiate();
         brd.display();
-        brd.moveFigure("B",9);
+        brd.moveFigure("B",1);
+        brd.display();
+        brd.moveFigure("B",1);
         brd.display();
     }
 }

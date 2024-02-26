@@ -3,8 +3,8 @@ public class Board {
     public Board(){
     }
     void boardInitiate(){
-        brd[0] = new Figure("A",1);
-        brd[1] = new Figure("B",2);
+        brd[0] = new Figure("A",1,true);
+        brd[1] = new Figure("B",2,true);
     }
     void display(){
         System.out.println("--1--2--3--4--5--6--7--8--9--10");
@@ -17,6 +17,12 @@ public class Board {
             }
         }
         System.out.println("\n--------------------------------");
+        for(int n=0;n<brd.length;n++){
+            if(brd[n] != null){
+                brd[n].updateMoveableList(this);
+                System.out.println("Next turn, Figure "+brd[n].name+" can move to these position: "+brd[n].moveableList);
+            }
+        }
     }
     void moveFigure(String name,int targetposition){
         System.out.printf("Command: move figure \"%s\" to %d\n",name,targetposition);
