@@ -1,11 +1,12 @@
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class Figure {
+    public static final String Bishop = null;
     String name = "";
     int currentRow;
     int currentColumn;
     boolean isWhite; // trur is white flase is black
-    ArrayList<String> moveableList = new ArrayList<String>();
+    //ArrayList<String> moveableList = new ArrayList<String>();
 
     public Figure(String name,boolean isWhite,int row,int column) {
         this.name = name;
@@ -14,7 +15,7 @@ public class Figure {
         this.currentColumn = column;
     }
 
-    void move(Board board, int targetRow, int targetColumn) {
+    void freeMove(Board board, int targetRow, int targetColumn) {
         if ((targetRow < 1) || (targetRow > 8) || (targetColumn < 1) || (targetColumn > 8)) {
             System.out.println("The speicified destination is out of range, Command abort!!\n");
             return;
@@ -27,19 +28,25 @@ public class Figure {
             board.brd[targetRow - 1][targetColumn - 1] = this;
             this.currentRow = targetRow;
             this.currentColumn = targetColumn;
-            this.updateMoveableList(board);
+            System.out.println(this.currentRow);
+            System.out.println(this.currentColumn);
+            //this.updateMoveableList(board);
 
         }
     }
 
-    void updateMoveableList(Board board) {
-        this.moveableList.clear();
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if ((board.brd[i][j] == null) || (board.brd[i][j].isWhite != this.isWhite)) {
-                    this.moveableList.add(Integer.toString(i + 1));
-                }
-            }
-        }
+    // void updateMoveableList(Board board) {
+    //     this.moveableList.clear();
+    //     for (int i = 0; i < 8; i++) {
+    //         for (int j = 0; j < 8; j++) {
+    //             if ((board.brd[i][j] == null) || (board.brd[i][j].isWhite != this.isWhite)) {
+    //                 this.moveableList.add(Integer.toString(i + 1));
+    //             }
+    //         }
+    //     }
+    // }
+
+    void move(Board board, int targetRow, int targetColumn){
+
     }
 }

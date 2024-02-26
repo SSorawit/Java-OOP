@@ -3,8 +3,12 @@ public class main {
         Board brd = new Board();
         brd.boardInitiate();
         brd.display();
-        brd.moveFigure("A",1,8);
+        brd.moveFree("A",1,8);
         brd.display();
-        brd.check();
+        brd.moveFree("B",1,7);
+        brd.display();
+        brd.move("x",6,8);
+        brd.display();
+        //brd.check();
     }
 }

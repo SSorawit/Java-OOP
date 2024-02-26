@@ -7,6 +7,7 @@ public class Board {
     void boardInitiate() {
         brd[0][0] = new Figure("A",true,1,1);
         brd[0][1] = new Figure("B",false,1,2);
+        brd[0][2] = new Bishop("x",true,1,3);
     }
 
     void display() {
@@ -32,7 +33,24 @@ public class Board {
         System.out.println("--------------------------------------------------------");
     }
 
-    void moveFigure(String name, int targetRow, int targetColumn) {
+    void moveFree(String name, int targetRow, int targetColumn) {
+        System.out.printf("Command: free move figure \"%s\" to row %d and column %d\n", name, targetRow, targetColumn);
+        boolean found = false;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (brd[i][j] == null)
+                    continue;
+                if (brd[i][j].name == name) {
+                    found = true;
+                    brd[i][j].freeMove(this,targetRow,targetColumn);
+                    break;
+                }
+            }
+        }
+        if (found == false)
+            System.out.printf("There is no figure named as \"%s\" in the board!! " + "Command abort\n\n", name);
+    }
+    void move(String name, int targetRow, int targetColumn){
         System.out.printf("Command: move figure \"%s\" to row %d and column %d\n", name, targetRow, targetColumn);
         boolean found = false;
         for (int i = 0; i < 8; i++) {
@@ -50,6 +68,11 @@ public class Board {
             System.out.printf("There is no figure named as \"%s\" in the board!! " + "Command abort\n\n", name);
     }
     void check(){
-        System.out.println(brd[7][7]);
+        System.out.println(brd[0][6].currentRow);
+        System.out.println(brd[0][6].currentColumn);
+        System.out.println(brd[0][7].currentRow);
+        System.out.println(brd[0][7].currentColumn);
+        System.out.println(brd[0][2].currentRow);
+        System.out.println(brd[0][2].currentColumn);
     }
 }
