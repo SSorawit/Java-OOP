@@ -1,11 +1,11 @@
 //import java.util.ArrayList;
 
-public class Figure {
+public abstract class Figure {
     public static final String Bishop = null;
-    String name = "";
-    int currentRow;
-    int currentColumn;
-    boolean isWhite; // trur is white flase is black
+    public String name = "";
+    public int currentRow;
+    public int currentColumn;
+    public boolean isWhite; // trur is white flase is black
     //ArrayList<String> moveableList = new ArrayList<String>();
 
     public Figure(String name,boolean isWhite,int row,int column) {
@@ -46,6 +46,6 @@ public class Figure {
     //     }
     // }
 
-    void move(Board board, int targetRow, int targetColumn){
-    }
+    abstract void move(Board board, int targetRow, int targetColumn);
+
 }
