@@ -13,7 +13,7 @@ class Bishop extends Figure {
             return;
         }
         // else if((board.brd[this.currentRow+1][this.currentColumn-1] != null) && (board.brd[this.currentRow+1][this.currentColumn+1] != null)){
-        //     System.out.println("----can't Move----");
+        //     System.out.println("----can't Move----"); // เช็ตว่ามีตัวปังอยู่มั้ย
         // }
         else if(Math.abs(this.currentRow - targetRow) == Math.abs(this.currentColumn - targetColumn)) {
             board.brd[this.currentRow - 1][this.currentColumn - 1] = null;
