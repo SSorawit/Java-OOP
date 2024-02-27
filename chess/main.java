@@ -7,8 +7,8 @@ public class main {
         brd.display();
         brd.move("x",3,5);
         brd.display();
-        brd.move("p",3,6);
-        brd.display();
+        // brd.move("p",3,6);
+        // brd.display();
         brd.check();
     }
 }

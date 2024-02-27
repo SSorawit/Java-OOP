@@ -22,9 +22,9 @@ class Bishop extends Figure {
             System.out.printf("The distunation is being occupied by the same-side\"%s\",Command abort!!\n\n",board.brd[targetRow - 1][targetColumn - 1].name);
             return;
         }
-        //else if((board.brd[this.currentRow+1][this.currentColumn-1] != null) && (board.brd[this.currentRow+1][this.currentColumn+1] != null)){
-            //System.out.println("----can't Move----");
-        //}
+        else if((board.brd[this.currentRow+1][this.currentColumn-1] != null) && (board.brd[this.currentRow+1][this.currentColumn+1] != null)){
+            System.out.println("----can't Move----");
+        }
         else if(Math.abs(this.currentRow - targetRow) == Math.abs(this.currentColumn - targetColumn)) {
             board.brd[this.currentRow - 1][this.currentColumn - 1] = null;
             board.brd[targetRow - 1][targetColumn - 1] = this;

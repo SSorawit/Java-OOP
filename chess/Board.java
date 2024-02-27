@@ -8,7 +8,7 @@ public class Board {
         brd[1][1] = new Figure("A",true,2,2);
         brd[0][1] = new Figure("B",true,1,2);
         brd[0][2] = new Bishop("x",true,1,3);
-        brd[1][3] = new Pawn("p",true,2,4);
+        //brd[1][3] = new Pawn("p",true,2,4);
     }
 
     void display() {
@@ -69,9 +69,9 @@ public class Board {
             System.out.printf("There is no figure named as \"%s\" in the board!! " + "Command abort\n\n", name);
     }
     void check(){
-        System.out.println(brd[2][5].currentRow);
-        System.out.println(brd[2][5].currentColumn);
-        System.out.println(brd[2][5].isWhite);
+        System.out.println(brd[2][4].currentRow);
+        System.out.println(brd[2][4].currentColumn);
+        System.out.println(brd[2][4].isWhite);
         // System.out.println(brd[2][4].currentRow);
         // System.out.println(brd[2][4].currentColumn);
         // System.out.println(brd[2][4].isWhite);
