@@ -6,6 +6,7 @@ public class Board {
 
     void boardInitiate() {
         brd[0][2] = new Bishop("x",true,1,3);
+        brd[1][0] = new Bishop("y",true,1,2);
         brd[1][3] = new Pawn("p",true,2,4);
     }
 
@@ -65,6 +66,13 @@ public class Board {
         }
         if (found == false)
             System.out.printf("There is no figure named as \"%s\" in the board!! " + "Command abort\n\n", name);
+    }
+    Object getPiece(int row,int column){
+        if(brd[row][column] == null){
+            return null;
+        }else{
+            return 1;
+        }
     }
     void check(){
         System.out.println(brd[7][5].currentRow);
