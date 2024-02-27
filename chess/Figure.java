@@ -28,8 +28,8 @@ public class Figure {
             board.brd[targetRow - 1][targetColumn - 1] = this;
             this.currentRow = targetRow;
             this.currentColumn = targetColumn;
-            System.out.println(this.currentRow);
-            System.out.println(this.currentColumn);
+            //System.out.println(this.currentRow);
+            //System.out.println(this.currentColumn);
             //this.updateMoveableList(board);
 
         }
@@ -47,6 +47,5 @@ public class Figure {
     // }
 
     void move(Board board, int targetRow, int targetColumn){
-
     }
 }
