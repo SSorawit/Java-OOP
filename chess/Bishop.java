@@ -5,6 +5,7 @@ class Bishop extends Figure {
 
     @Override
     void move(Board board, int targetRow, int targetColumn) {
+        boolean sameColor = false;
         // Check for out-of-bounds destinations
         if ((targetRow < 1) || (targetRow > 8) || (targetColumn < 1) || (targetColumn > 8)) {
             System.out.println("The specified destination is out of range, Command abort!!\n");
@@ -12,8 +13,9 @@ class Bishop extends Figure {
         }
 
         // Check if destination is occupied by the same-colored piece
-        if ((board.brd[targetRow - 1][targetColumn - 1] != null) && (board.brd[targetRow - 1][targetColumn - 1].isWhite == this.isWhite))  {
+        else if ((board.brd[targetRow - 1][targetColumn - 1] != null) && (board.brd[targetRow - 1][targetColumn - 1].isWhite == this.isWhite))  {
             System.out.printf("The destination is being occupied by the same-side \"%s\", Command abort!!\n\n", board.brd[targetRow - 1][targetColumn - 1].name);
+            sameColor = true;
             return;
         }
 
@@ -24,7 +26,7 @@ class Bishop extends Figure {
         int checkColumn = currentColumn + columnDirection;
         while (checkRow != targetRow && checkColumn != targetColumn && checkColumn > 0 && checkRow > 0) {
             // Check for any piece blocking the path, not just the same-colored piece
-            if (board.brd[targetRow - 1][targetColumn - 1] != null) {
+            if (board.brd[targetRow - 1][targetColumn - 1] != null && (board.brd[targetRow - 1][targetColumn - 1].isWhite == this.isWhite)) {
                 System.out.println("Cannot move " + this.name + " to " + board.brd[checkRow - 1][checkColumn - 1] + " because the path is blocked.");
                 return;
             }
@@ -33,10 +35,12 @@ class Bishop extends Figure {
         }
 
         // If the path is clear and the destination is not occupied by the same-colored piece, perform the move
+        if(Math.abs(this.currentRow - targetRow) == Math.abs(this.currentColumn - targetColumn) && sameColor != true){
         board.brd[this.currentRow - 1][this.currentColumn - 1] = null;
         board.brd[targetRow - 1][targetColumn - 1] = this;
         this.currentRow = targetRow;
         this.currentColumn = targetColumn;
         System.out.println("Successful move.");
+        }
     }
 }

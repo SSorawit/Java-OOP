@@ -67,13 +67,6 @@ public class Board {
         if (found == false)
             System.out.printf("There is no figure named as \"%s\" in the board!! " + "Command abort\n\n", name);
     }
-    Object getPiece(int row,int column){
-        if(brd[row][column] == null){
-            return null;
-        }else{
-            return 1;
-        }
-    }
     void check(){
         System.out.println(brd[7][5].currentRow);
         System.out.println(brd[7][5].currentColumn);

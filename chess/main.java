@@ -9,7 +9,5 @@ public class main {
         brd.display();
         brd.move("x",5,7);
         brd.display();
-        brd.move("x",8,2);
-        brd.display();
     }
 }
