@@ -18,10 +18,6 @@ public class Pawn extends Figure {
             board.brd[targetRow - 1][targetColumn - 1] = this;
             this.currentRow = targetRow;
             this.currentColumn = targetColumn;
-            System.out.println("----complate----");
-            System.out.println(this.currentRow);
-            System.out.println(this.currentColumn);
-            return;
         } else
             // System.out.println(this.currentRow); //เอาไว้ check
             // System.out.println(this.currentRow - targetRow);
