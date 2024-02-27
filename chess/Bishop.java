@@ -14,7 +14,6 @@ class Bishop extends Figure {
         // Check if destination is occupied by the same-colored piece
         if ((board.brd[targetRow - 1][targetColumn - 1] != null) && (board.brd[targetRow - 1][targetColumn - 1].isWhite == this.isWhite))  {
             System.out.printf("The destination is being occupied by the same-side \"%s\", Command abort!!\n\n", board.brd[targetRow - 1][targetColumn - 1].name);
-            System.out.println(board.brd[targetRow - 1][targetColumn - 1].name);
             return;
         }
 
@@ -25,7 +24,7 @@ class Bishop extends Figure {
         int checkColumn = currentColumn + columnDirection;
         while (checkRow != targetRow && checkColumn != targetColumn && checkColumn > 0 && checkRow > 0) {
             // Check for any piece blocking the path, not just the same-colored piece
-            if (board.getPiece(checkRow, checkColumn) != null) {
+            if (board.brd[targetRow - 1][targetColumn - 1] != null) {
                 System.out.println("Cannot move " + this.name + " to " + board.brd[checkRow - 1][checkColumn - 1] + " because the path is blocked.");
                 return;
             }
