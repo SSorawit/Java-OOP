@@ -1,7 +1,6 @@
 //import java.util.ArrayList;
 
 public abstract class Figure {
-    public static final String Bishop = null;
     public String name = "";
     public int currentRow;
     public int currentColumn;
